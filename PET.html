@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pet App</title>
+
+    <style>
+      body {
+        background: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+
+      /* iPad-style frame */
+      .ipad {
+        width: 400px;
+        height: 600px;
+        background: #111;
+        border-radius: 40px;
+        padding: 20px;
+        box-shadow: 0 0 40px black;
+        border: 12px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .screen {
+        background: white;
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        text-align: center;
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      #pet {
+        font-size: 100px;
+        margin: 20px 0;
+      }
+
+      button {
+        padding: 12px 25px;
+        font-size: 18px;
+        border-radius: 10px;
+        border: none;
+        background: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #45a049;
+      }
+
+      #status {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ipad">
+      <div class="screen">
+        <h2>My Pet</h2>
+        <div id="pet">🐶</div>
+        <p>Hunger: <span id="hunger">5</span></p>
+        <div id="MAINBOX" style="width: 200px; height: 30px; background-color: rgb(0, 0, 0) ;border-radius: 100px;">
+          <div
+            id="progress"
+            style="width: 30px; height: 30px; background-color: black; border-radius: 100px;"
+          ></div>
+        </div>
+        <button id="feedBtn">Feed Me</button>
+        <p id="status"></p>
+      </div>
+    </div>
+
+    <script>
+      let hunger = 5;
+      let alive = true;
+
+      const progress = document.getElementById("progress");
+      const hungerDisplay = document.getElementById("hunger");
+      const petDisplay = document.getElementById("pet");
+      const statusDisplay = document.getElementById("status");
+      const feedBtn = document.getElementById("feedBtn");
+
+      function updatePet() {
+        if (!alive) return;
+
+        if (hunger <= 3) {
+          petDisplay.textContent = "😄";
+          progress.style.backgroundColor="green"
+        } else if (hunger <= 7) {
+          petDisplay.textContent = "🐶";
+           progress.style.backgroundColor="yellow"
+        } else {
+          petDisplay.textContent = "😢";
+           progress.style.backgroundColor="red"
+        }
+      }
+
+      feedBtn.addEventListener("click", () => {
+        // REVIVE if dead
+        if (!alive) {
+          alive = true;
+          hunger = 5;
+          petDisplay.textContent = "🐶";
+          hungerDisplay.textContent = hunger;
+          statusDisplay.textContent = "Your pet has been revived! 🎉";
+          return;
+        }
+
+        // Feed normally
+        hunger -= 2;
+        if (hunger < 0) hunger = 0;
+
+        hungerDisplay.textContent = hunger;
+        updatePet();
+        statusDisplay.textContent = "Yum! 😋";
+      });
+
+      setInterval(() => {
+        if (!alive) return;
+
+        hunger += 1;
+        progress.style.width=((hunger+8)*10)+"px"
+        hungerDisplay.textContent = hunger;
+        updatePet();
+
+        if (hunger >= 10) {
+          alive = false;
+          petDisplay.textContent = "💀";
+          statusDisplay.textContent = "Your pet died! Press Feed Me to revive.";
+        }
+      }, 3000);
+
+      updatePet();
+    </script>
+  </body>
+</html>
