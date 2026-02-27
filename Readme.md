@@ -13,5 +13,9 @@
       <img src="quiz.png" width="300px;" alt="Description 2"/><br />
       <sub><b>Quiz app made using Javascript</b></sub>
     </td>
+    <td align="center">
+      <img src="pet.png" width="300px;" alt="Description 2"/><br />
+      <sub><b>Petsimulator app made using Javascript</b></sub>
+    </td>
   </tr>
 </table>
