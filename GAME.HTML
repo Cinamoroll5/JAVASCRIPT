@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Ocean Game</title>
+
+<style>
+
+body{
+text-align:center;
+font-family:Arial;
+background:#e0f7ff;
+}
+
+canvas{
+background:#bde0fe;
+border:2px solid #0077b6;
+}
+
+button{
+margin-top:20px;
+padding:10px 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🎮 Ocean Cleanup Game</h1>
+<p>Move the basket and catch trash to clean the ocean!</p>
+
+<canvas id="gameCanvas" width="400" height="400"></canvas>
+
+<br>
+
+<a href="index.html">
+<button>⬅ Back</button>
+</a>
+
+<script>
+
+let canvas=document.getElementById("gameCanvas");
+let ctx=canvas.getContext("2d");
+
+let basketX=180;
+let trashY=0;
+let trashX=Math.random()*380;
+let score=0;
+
+document.addEventListener("mousemove",function(e){
+basketX=e.offsetX;
+});
+
+function game(){
+
+ctx.clearRect(0,0,400,400);
+
+ctx.fillStyle="green";
+ctx.fillRect(basketX,360,60,20);
+
+ctx.fillStyle="red";
+ctx.fillRect(trashX,trashY,20,20);
+
+trashY+=3;
+
+if(trashY>360 && trashX>basketX && trashX<basketX+60){
+score++;
+trashY=0;
+trashX=Math.random()*380;
+}
+
+if(trashY>400){
+trashY=0;
+trashX=Math.random()*380;
+}
+
+ctx.fillStyle="black";
+ctx.fillText("Score: "+score,10,20);
+
+requestAnimationFrame(game);
+
+}
+
+game();
+
+</script>
+
+</body>
+</html>

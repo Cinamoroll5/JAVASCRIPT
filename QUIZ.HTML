@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Marine Quiz</title>
+
+<style>
+
+body{
+font-family:Arial;
+background: linear-gradient(to right,#0077b6,#00b4d8);
+color:white;
+text-align:center;
+padding:30px;
+}
+
+.quiz-box{
+background:white;
+color:#333;
+padding:25px;
+border-radius:12px;
+width:70%;
+margin:auto;
+text-align:left;
+}
+
+button{
+margin-top:20px;
+padding:10px 20px;
+background:#0077b6;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.result{
+font-weight:bold;
+margin-top:15px;
+font-size:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🌊 Marine Conservation Quiz</h1>
+
+<div class="quiz-box">
+
+<form id="quizForm">
+
+<!-- Questions 1–20 -->
+
+<p><b>1. Why turn off the tap when brushing?</b></p>
+<input type="radio" name="q1" value="a"> Save water<br>
+<input type="radio" name="q1" value="b"> Make noise<br>
+<input type="radio" name="q1" value="c"> Waste water<br>
+
+<p><b>2. What harms oceans most?</b></p>
+<input type="radio" name="q2" value="a"> Plastic pollution<br>
+<input type="radio" name="q2" value="b"> Clean water<br>
+<input type="radio" name="q2" value="c"> Fish swimming<br>
+
+<p><b>3. What should you do with trash?</b></p>
+<input type="radio" name="q3" value="a"> Throw in river<br>
+<input type="radio" name="q3" value="b"> Put in bin<br>
+<input type="radio" name="q3" value="c"> Leave on beach<br>
+
+<p><b>4. Coral reefs are:</b></p>
+<input type="radio" name="q4" value="a"> Marine ecosystems<br>
+<input type="radio" name="q4" value="b"> Mountains<br>
+<input type="radio" name="q4" value="c"> Deserts<br>
+
+<p><b>5. Best way to wash clothes?</b></p>
+<input type="radio" name="q5" value="a"> Full load<br>
+<input type="radio" name="q5" value="b"> Half load<br>
+<input type="radio" name="q5" value="c"> Every hour<br>
+
+<p><b>6. Fixing leaks helps:</b></p>
+<input type="radio" name="q6" value="a"> Waste water<br>
+<input type="radio" name="q6" value="b"> Save water<br>
+<input type="radio" name="q6" value="c"> Increase bills<br>
+
+<p><b>7. Oceans are important because:</b></p>
+<input type="radio" name="q7" value="a"> They support life<br>
+<input type="radio" name="q7" value="b"> Only ships use them<br>
+<input type="radio" name="q7" value="c"> They are empty<br>
+
+<p><b>8. Plastic in oceans:</b></p>
+<input type="radio" name="q8" value="a"> Helps fish<br>
+<input type="radio" name="q8" value="b"> Harms animals<br>
+<input type="radio" name="q8" value="c"> Turns into food<br>
+
+<p><b>9. Shorter showers:</b></p>
+<input type="radio" name="q9" value="a"> Save water<br>
+<input type="radio" name="q9" value="b"> Waste water<br>
+<input type="radio" name="q9" value="c"> Do nothing<br>
+
+<p><b>10. Beach cleanup helps:</b></p>
+<input type="radio" name="q10" value="a"> Pollute oceans<br>
+<input type="radio" name="q10" value="b"> Protect oceans<br>
+<input type="radio" name="q10" value="c"> Make trash<br>
+
+<p><b>11. Marine animals live in:</b></p>
+<input type="radio" name="q11" value="a"> Oceans<br>
+<input type="radio" name="q11" value="b"> Deserts<br>
+<input type="radio" name="q11" value="c"> Space<br>
+
+<p><b>12. Recycling helps:</b></p>
+<input type="radio" name="q12" value="a"> Reduce pollution<br>
+<input type="radio" name="q12" value="b"> Increase trash<br>
+<input type="radio" name="q12" value="c"> Waste energy<br>
+
+<p><b>13. Turning off taps when unused:</b></p>
+<input type="radio" name="q13" value="a"> Saves water<br>
+<input type="radio" name="q13" value="b"> Wastes water<br>
+<input type="radio" name="q13" value="c"> Breaks taps<br>
+
+<p><b>14. Coral reefs protect:</b></p>
+<input type="radio" name="q14" value="a"> Marine life<br>
+<input type="radio" name="q14" value="b"> Cars<br>
+<input type="radio" name="q14" value="c"> Roads<br>
+
+<p><b>15. Water conservation means:</b></p>
+<input type="radio" name="q15" value="a"> Saving water<br>
+<input type="radio" name="q15" value="b"> Wasting water<br>
+<input type="radio" name="q15" value="c"> Polluting water<br>
+
+<p><b>16. Fish need clean:</b></p>
+<input type="radio" name="q16" value="a"> Water<br>
+<input type="radio" name="q16" value="b"> Sand<br>
+<input type="radio" name="q16" value="c"> Smoke<br>
+
+<p><b>17. Protecting oceans helps:</b></p>
+<input type="radio" name="q17" value="a"> Animals survive<br>
+<input type="radio" name="q17" value="b"> Increase trash<br>
+<input type="radio" name="q17" value="c"> Destroy reefs<br>
+
+<p><b>18. Which is eco-friendly?</b></p>
+<input type="radio" name="q18" value="a"> Recycling<br>
+<input type="radio" name="q18" value="b"> Littering<br>
+<input type="radio" name="q18" value="c"> Dumping waste<br>
+
+<p><b>19. Water is:</b></p>
+<input type="radio" name="q19" value="a"> Important resource<br>
+<input type="radio" name="q19" value="b"> Useless<br>
+<input type="radio" name="q19" value="c"> Harmful<br>
+
+<p><b>20. Best way to protect oceans?</b></p>
+<input type="radio" name="q20" value="a"> Reduce pollution<br>
+<input type="radio" name="q20" value="b"> Throw trash<br>
+<input type="radio" name="q20" value="c"> Ignore problems<br>
+
+<br>
+
+<button type="button" onclick="checkQuiz()">Submit Quiz</button>
+
+<p class="result" id="result"></p>
+
+</form>
+
+<br>
+
+<a href="index.html">
+<button>⬅ Back</button>
+</a>
+
+</div>
+
+<script>
+
+function checkQuiz(){
+
+let answers=[
+"a","a","b","a","a",
+"b","a","b","a","b",
+"a","a","a","a","a",
+"a","a","a","a","a"
+];
+
+let score=0;
+
+for(let i=1;i<=20;i++){
+let q=document.querySelector('input[name="q'+i+'"]:checked');
+if(q && q.value===answers[i-1]) score++;
+}
+
+document.getElementById("result").innerHTML="Your Score: "+score+" / 20 🐟";
+ 
+
+
+backbtn = document.getElementById()
+}
+
+</script>
+
+</body>
+</html>
